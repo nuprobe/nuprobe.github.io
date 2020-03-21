@@ -96,6 +96,9 @@ export default {
   }
   &_link{
     color: #fff;
+    &:link {
+      text-decoration: underline;
+    }
   }
 }
 .register{

@@ -3,7 +3,7 @@
     <b-container>
       <b-nav-text class="navBarGuastFooter_text">
         <span>for additional information</span>
-        please contact ngsuresupport@nuprobe
+        please contact ngsuresupport@nuprobe.com
       </b-nav-text>
     </b-container>
   </b-navbar>

@@ -2,9 +2,9 @@
   <div class="navBarGuastHeader">
     <b-container>
       <div class="d-flex justify-content-between align-items-center">
-        <div>
+        <a href="http://nuprobe.com/" target="_blank" style="display:block">
           <img class="navBarGuastHeader_logo"  src="../assets/img/logo.svg" alt="Logo">
-        </div>
+        </a>
         <div class="d-flex align-items-center navBarGuastHeader_item">
           <p class="navBarGuastHeader_item--text d-sm-none d-none d-sm-block">
             about ngsure and features

@@ -1,22 +1,10 @@
 <template>
   <b-row class="wrapperForm">
     <b-col sm='12' md='4'>
-      <h1 class="text-center wrapperForm_title mb-3">Register</h1>
+      <h1 class="text-center wrapperForm_title mb-3">Request for Access</h1>
       <div class="loginForm  ">
         <ValidationObserver slim v-slot="{ handleSubmit }">
           <b-form class="loginForm_form" @submit.prevent="handleSubmit(onSubmit)">
-            <ValidationProvider slim name="username" rules="required" v-slot="{ errors , failed }">
-              <b-form-group>
-                <b-form-input
-                  id="input-username"
-                  v-model="form.username"
-                  type="text"
-                  placeholder="ENTER USERNAME"
-                  :class="{'is-error':failed}"
-                ></b-form-input>
-                <span class="error-message">{{ errors[0] }}</span>
-              </b-form-group>
-            </ValidationProvider>
             <ValidationProvider
               slim
               name="first name"
@@ -41,6 +29,18 @@
                   type="text"
                   :class="{'is-error':failed}"
                   placeholder="ENTER LAST NAME"
+                ></b-form-input>
+                <span class="error-message">{{ errors[0] }}</span>
+              </b-form-group>
+            </ValidationProvider>
+            <ValidationProvider slim name="company" rules="required" v-slot="{ errors , failed }">
+              <b-form-group>
+                <b-form-input
+                  id="input-company"
+                  v-model="form.company"
+                  type="text"
+                  placeholder="COMPANY"
+                  :class="{'is-error':failed}"
                 ></b-form-input>
                 <span class="error-message">{{ errors[0] }}</span>
               </b-form-group>

@@ -39,7 +39,7 @@
                   id="input-company"
                   v-model="form.company"
                   type="text"
-                  placeholder="COMPANY"
+                  placeholder="ENTER COMPANY NAME"
                   :class="{'is-error':failed}"
                 ></b-form-input>
                 <span class="error-message">{{ errors[0] }}</span>
@@ -59,6 +59,37 @@
                   :class="{'is-error':failed}"
                   placeholder="ENTER EMAIL"
                 ></b-form-input>
+                <span class="error-message">{{ errors[0] }}</span>
+              </b-form-group>
+            </ValidationProvider>
+            <b-form-group>
+              <b-dropdown
+                block
+                split
+                split-variant="outline-light"
+                variant="light btn-lg"
+                text="ACCOUNT TYPE"
+                class="loginForm_dropdown"
+              >
+                <b-dropdown-item href="#">Trial Account</b-dropdown-item>
+                <b-dropdown-item href="#">Standard Account</b-dropdown-item>
+              </b-dropdown>
+            </b-form-group>
+            <ValidationProvider
+              slim
+              name="message"
+              rules="required|message"
+              v-slot="{ errors , failed }"
+              >
+              <b-form-group>
+                <b-form-textarea
+                  id="message"
+                  v-model="form.message"
+                  :class="{'is-error':failed}"
+                  placeholder="ENTER YOUR MESSAGE"
+                  rows="3"
+                  max-rows="6"
+                ></b-form-textarea>
                 <span class="error-message">{{ errors[0] }}</span>
               </b-form-group>
             </ValidationProvider>
@@ -82,6 +113,9 @@ export default {
         firstName: null,
         lastName: null,
         email: null,
+        company: null,
+        account_type: null,
+        message: null,
       },
     };
   },
@@ -134,6 +168,16 @@ export default {
     font-family:  'OpenSans-Regular' , sans-serif;
     font-size: 14px;
   }
+  &_dropdown > *{
+      /*padding: 5px 0;*/
+      border-radius: 0!important;
+      /*background-color: #fff!important;*/
+    }
+  /*.btn-block{
+    padding: 5px 0;
+      border-radius: 0!important;
+      background-color: #fff!important;
+  }*/
 }
 .form-control{
   font-size: 15px;
